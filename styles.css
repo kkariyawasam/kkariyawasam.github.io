@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+header {
+  background: #4b79a1;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+h1, h2 {
+  margin: 0.5em 0;
+}
+section {
+  padding: 1.5rem 2rem;
+}
+.project {
+  margin-bottom: 1rem;
+}
+a {
+  color: #4b79a1;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
