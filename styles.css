@@ -21,14 +21,14 @@ body {
 
 .navbar .logo {
   color: white;
-  margin-top: -3px;
+  margin-top: -5px;
  
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  margin-top: -3px;
+  margin-top: -5px;
   gap: 1rem;
 }
 
