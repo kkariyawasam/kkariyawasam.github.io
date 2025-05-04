@@ -21,12 +21,14 @@ body {
 
 .navbar .logo {
   color: white;
-  margin: 0;
+  margin-top: -2px;
+ 
 }
 
 .nav-links {
   list-style: none;
   display: flex;
+  margin-top: -2px;
   gap: 1rem;
 }
 
@@ -38,7 +40,7 @@ body {
 .intro {
   display: flex;
   max-width: 1100px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 1rem;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
