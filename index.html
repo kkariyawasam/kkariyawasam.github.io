@@ -184,110 +184,122 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Projects</h2>
-          <p class="muted">Card layout + tags for faster scanning.</p>
-        </div>
+   <section id="projects" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <p class="muted">Swipe / drag or use arrows to slide.</p>
+    </div>
 
-        <div class="projects-grid">
+    <div class="slider-wrap">
+      <button class="slider-btn prev" aria-label="Previous" data-slider="projects">‹</button>
 
-          <!-- Project Card -->
-          <article class="project card">
-            <div class="project-media">
-              <img src="bluesky.png" alt="Automated Bluesky Posting Workflow Screenshot" />
+      <div class="slider" id="projectsSlider" tabindex="0" aria-label="Projects slider">
+        <!-- Slide 1 -->
+        <article class="slide card project">
+          <div class="project-media">
+            <img src="bluesky.png" alt="Automated Bluesky Posting Workflow Screenshot" />
+          </div>
+          <div class="project-body">
+            <h3>Automated Bluesky Posting Workflow</h3>
+            <p>Fetch RSS updates and auto-publish to Bluesky (title + link + image + hashtag).</p>
+            <div class="chips">
+              <span class="chip">n8n</span><span class="chip">Bluesky API</span><span class="chip">RSS</span>
             </div>
-            <div class="project-body">
-              <h3>Automated Bluesky Posting Workflow</h3>
-              <p>Fetch RSS updates and auto-publish to Bluesky (title + link + image + hashtag).</p>
-              <div class="chips">
-                <span class="chip">n8n</span><span class="chip">Bluesky API</span><span class="chip">RSS</span>
-              </div>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project card">
-            <div class="project-media">
-              <img src="insta.png" alt="Automated Instagram Posting Workflow Screenshot" />
+        <!-- Slide 2 -->
+        <article class="slide card project">
+          <div class="project-media">
+            <img src="insta.png" alt="Automated Instagram Posting Workflow Screenshot" />
+          </div>
+          <div class="project-body">
+            <h3>Automated Instagram Posting Workflow</h3>
+            <p>Retrieve latest news, convert to image (HTML→Image), store results, and auto-post to Instagram.</p>
+            <div class="chips">
+              <span class="chip">Make.com</span><span class="chip">Apify</span><span class="chip">Dropbox</span>
             </div>
-            <div class="project-body">
-              <h3>Automated Instagram Posting Workflow</h3>
-              <p>Retrieve latest news, convert to image (HTML→Image), store results, and auto-post to Instagram.</p>
-              <div class="chips">
-                <span class="chip">Make.com</span><span class="chip">Apify</span><span class="chip">Dropbox</span><span class="chip">Instagram Business</span>
-              </div>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project card">
-            <div class="project-media">
-              <img src="health-lang.png" alt="AI Healthcare Assistant Web App Screenshot" />
+        <!-- Slide 3 -->
+        <article class="slide card project">
+          <div class="project-media">
+            <img src="health-lang.png" alt="AI Healthcare Assistant Web App Screenshot" />
+          </div>
+          <div class="project-body">
+            <h3>AI Healthcare Assistant</h3>
+            <p>Form processing + symptom triage with structured intake storage and automated follow-ups.</p>
+            <div class="chips">
+              <span class="chip">React</span><span class="chip">FastAPI</span><span class="chip">Firebase</span>
             </div>
-            <div class="project-body">
-              <h3>AI Healthcare Assistant</h3>
-              <p>Patient form processing + symptom triage with structured intake storage and automated follow-ups.</p>
-              <div class="chips">
-                <span class="chip">React</span><span class="chip">FastAPI</span><span class="chip">Firebase</span><span class="chip">LangChain</span>
-              </div>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project card">
-            <div class="project-media">
-              <img src="health.png" alt="AI Health Consultant Screenshot" />
+        <!-- Slide 4 -->
+        <article class="slide card project">
+          <div class="project-media">
+            <img src="health.png" alt="AI Health Consultant Screenshot" />
+          </div>
+          <div class="project-body">
+            <h3>AI Health Consultant</h3>
+            <p>RAG assistant using vector search to answer medical queries from domain documents.</p>
+            <div class="chips">
+              <span class="chip">Flask</span><span class="chip">FAISS</span><span class="chip">OpenAI</span>
             </div>
-            <div class="project-body">
-              <h3>AI Health Consultant</h3>
-              <p>RAG assistant using vector search to answer medical queries from domain documents.</p>
-              <div class="chips">
-                <span class="chip">Flask</span><span class="chip">FAISS</span><span class="chip">OpenAI</span><span class="chip">Embeddings</span>
-              </div>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project card">
-            <div class="project-media">
-              <img src="travel.png" alt="Travel Assistant Web App Screenshot" />
+        <!-- Slide 5 -->
+        <article class="slide card project">
+          <div class="project-media">
+            <img src="travel.png" alt="Travel Assistant Web App Screenshot" />
+          </div>
+          <div class="project-body">
+            <h3>Travel Assistant Web Application</h3>
+            <p>AI destination suggestions + YouTube enrichment via APIs.</p>
+            <div class="chips">
+              <span class="chip">React</span><span class="chip">Flask</span><span class="chip">REST</span>
             </div>
-            <div class="project-body">
-              <h3>Travel Assistant Web Application</h3>
-              <p>AI-powered attraction recommendations + YouTube enrichment via third-party APIs.</p>
-              <div class="chips">
-                <span class="chip">React</span><span class="chip">Flask</span><span class="chip">OpenAI</span><span class="chip">REST</span>
-              </div>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project card">
-            <div class="project-media">
-              <img src="store.png" alt="Clothing Store Chatbot Screenshot" />
+        <!-- Slide 6 -->
+        <article class="slide card project">
+          <div class="project-media">
+            <img src="store.png" alt="Clothing Store Chatbot Screenshot" />
+          </div>
+          <div class="project-body">
+            <h3>Clothing Store Assistant Chatbot</h3>
+            <p>Gradio chatbot with streaming responses + custom UI for promotions.</p>
+            <div class="chips">
+              <span class="chip">Gradio</span><span class="chip">Python</span><span class="chip">GPT-4o-mini</span>
             </div>
-            <div class="project-body">
-              <h3>Clothing Store Assistant Chatbot</h3>
-              <p>Interactive Gradio chatbot with streaming responses and custom UI for store promotions.</p>
-              <div class="chips">
-                <span class="chip">Gradio</span><span class="chip">Python</span><span class="chip">GPT-4o-mini</span>
-              </div>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project card">
-            <div class="project-media">
-              <img src="chatbot.png" alt="Insurellm Chatbot Screenshot" />
+        <!-- Slide 7 -->
+        <article class="slide card project">
+          <div class="project-media">
+            <img src="chatbot.png" alt="Insurellm Chatbot Screenshot" />
+          </div>
+          <div class="project-body">
+            <h3>Insurellm Chatbot</h3>
+            <p>Context-aware chatbot mapping queries to internal knowledge for accurate answers.</p>
+            <div class="chips">
+              <span class="chip">Gradio</span><span class="chip">Knowledge Base</span><span class="chip">GPT-4o-mini</span>
             </div>
-            <div class="project-body">
-              <h3>Insurellm Chatbot</h3>
-              <p>Context-aware chatbot that maps user queries to internal knowledge for accurate answers.</p>
-              <div class="chips">
-                <span class="chip">Gradio</span><span class="chip">Knowledge Base</span><span class="chip">GPT-4o-mini</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
+          </div>
+        </article>
       </div>
-    </section>
+
+      <button class="slider-btn next" aria-label="Next" data-slider="projects">›</button>
+    </div>
+
+    <div class="slider-dots" id="projectsDots" aria-label="Projects pagination"></div>
+  </div>
+</section>
 
     <!-- Skills -->
     <section id="skills" class="section">
