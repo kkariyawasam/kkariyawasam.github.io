@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js"></script>
 </head>
-
+ 
 <body>
   <!-- Top progress bar -->
   <div class="progress" id="progress"></div>
@@ -468,76 +468,5 @@
       </div>
     </footer>
   </main>
-
-  <script>
-    // Smooth scroll (keeps default anchor behavior but smoother)
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (!id || id === '#') return;
-        const el = document.querySelector(id);
-        if (!el) return;
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // close mobile menu
-        document.getElementById('navLinks').classList.remove('open');
-      });
-    });
-
-    // Mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-
-    // Navbar shadow on scroll + progress bar
-    const navbar = document.getElementById('navbar');
-    const progress = document.getElementById('progress');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 10);
-
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progress.style.width = percent + '%';
-    });
-
-    // Scrollspy: highlight active link
-    const sections = [...document.querySelectorAll('section, header.hero')];
-    const links = [...document.querySelectorAll('.navlink')];
-    const byId = (id) => links.find(l => l.getAttribute('href') === '#' + id);
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          links.forEach(l => l.classList.remove('active'));
-          const link = byId(id);
-          if (link) link.classList.add('active');
-        }
-      });
-    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.02 });
-
-    sections.forEach(s => s.id && io.observe(s));
-
-    // Theme toggle (light/dark)
-    const toggle = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
-
-    const setTheme = (t) => {
-      document.documentElement.setAttribute('data-theme', t);
-      icon.textContent = t === 'dark' ? '☀️' : '🌙';
-      localStorage.setItem('theme', t);
-    };
-
-    const saved = localStorage.getItem('theme');
-    if (saved) setTheme(saved);
-
-    toggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      setTheme(current === 'light' ? 'dark' : 'light');
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
