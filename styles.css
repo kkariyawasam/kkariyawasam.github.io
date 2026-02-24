@@ -476,3 +476,110 @@ html[data-theme="light"] .navbar{
     gap: 10px;
   }
 }
+
+/* ===== Slider / Sliding Window ===== */
+.slider-wrap{
+  position: relative;
+  margin-top: 18px;
+  padding: 4px 48px; /* space for arrow buttons */
+}
+
+.slider{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 360px);
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 8px;
+  border-radius: 22px;
+
+  /* hide scrollbar */
+  scrollbar-width: none;
+}
+.slider::-webkit-scrollbar{ display:none; }
+
+.slide{
+  scroll-snap-align: start;
+  user-select: none;
+}
+
+.slider-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 28px;
+  line-height: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+}
+.slider-btn:hover{
+  background: var(--panel-2);
+  transform: translateY(-50%) scale(1.04);
+}
+.slider-btn:active{
+  transform: translateY(-50%) scale(0.98);
+  opacity: .9;
+}
+
+.slider-btn.prev{ left: 0; }
+.slider-btn.next{ right: 0; }
+
+.slider-dots{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.slider-dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  cursor: pointer;
+  transition: transform .15s ease, width .15s ease, background .15s ease;
+}
+.slider-dot.active{
+  width: 26px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  transform: scale(1.02);
+  border: none;
+}
+
+/* nicer: fade edges like a window */
+.slider-wrap::before,
+.slider-wrap::after{
+  content:"";
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.slider-wrap::before{
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+.slider-wrap::after{
+  right: 0;
+  background: linear-gradient(270deg, var(--bg), transparent);
+}
+
+@media (max-width: 720px){
+  .slider-wrap{ padding: 4px 36px; }
+  .slider-btn{ width: 38px; height: 38px; font-size: 26px; }
+  .slider{ grid-auto-columns: minmax(260px, 85vw); }
+}
